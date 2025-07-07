@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariangel Mujica - Marketing Inmobiliario</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/hero/hero.css">
+    <link rel="stylesheet" href="components/about/about.css">
+    <link rel="stylesheet" href="components/agency/agency.css">
+    <link rel="stylesheet" href="components/courses/courses.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+    <link rel="stylesheet" href="components/gallery/gallery.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h2>MARIANGEL</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#agencia">Agencia</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto" class="btn-contact">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="/placeholder.svg?height=800&width=1200" alt="Marketing Inmobiliario 1">
+            </div>
+            <div class="slide">
+                <img src="/placeholder.svg?height=800&width=1200" alt="Marketing Inmobiliario 2">
+            </div>
+            <div class="slide">
+                <img src="/placeholder.svg?height=800&width=1200" alt="Marketing Inmobiliario 3">
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-greeting">¡HEY!</span>
+                <h1>SOY MARIANGEL.</h1>
+                <p class="hero-description">
+                    Especialista en <strong>Marketing Inmobiliario</strong> con 
+                    <strong>inteligencia artificial</strong> y estrategias digitales.
+                </p>
+                <button class="btn-primary" onclick="scrollToSection('sobre-mi')">
+                    Conoce mi historia
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">›</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Sobre mí</h2>
+                    <h3>Conoce mi historia</h3>
+                    <p>
+                        Es probable que hayas escuchado de mí o hayas consumido 
+                        alguno de mis contenidos. Cada año, <strong>mi marketing genera 
+                        entre 400 y 500 millones de impresiones.</strong> Pero sin importar 
+                        cómo llegaste aquí, <strong>gracias por estar.</strong>
+                    </p>
+                    <p>
+                        Hoy más que nunca, en una era marcada por la inteligencia 
+                        artificial, <strong>se necesitan líderes como tú</strong>; que combinen 
+                        <strong>humanidad con estrategia</strong>, e <strong>IA con intención y propósito.</strong>
+                    </p>
+                    <button class="btn-secondary">
+                        Conocer más
+                    </button>
+                </div>
+                <div class="about-image">
+                    <img src="/placeholder.svg?height=500&width=400" alt="Mariangel Mujica">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agency Section -->
+    <section id="agencia" class="agency">
+        <div class="container">
+            <div class="agency-header">
+                <span class="section-tag">NUESTRA AGENCIA</span>
+                <h2>Big Leap Marketing</h2>
+                <p>Transformamos tu negocio inmobiliario con estrategias digitales innovadoras</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>Marketing Digital</h3>
+                    <p>Estrategias personalizadas para maximizar tu presencia online</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>IA para Inmobiliarias</h3>
+                    <p>Automatización inteligente para optimizar tus procesos</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3>Generación de Leads</h3>
+                    <p>Sistemas probados para atraer clientes potenciales</p>
+                </div>
+            </div>
+            <div class="agency-cta">
+                <button class="btn-primary" onclick="window.location.href='servicios.html'">
+                    Ver todos los servicios
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="cursos" class="courses">
+        <div class="container">
+            <div class="courses-header">
+                <span class="section-tag">EDUCACIÓN</span>
+                <h2>Cursos Disponibles</h2>
+                <p>Aprende las estrategias que han generado millones de impresiones</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card" onclick="openCourseModal('marketing-inmobiliario')">
+                    <div class="course-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Marketing Inmobiliario">
+                    </div>
+                    <div class="course-content">
+                        <h3>Marketing Inmobiliario con IA</h3>
+                        <p>Domina las herramientas de inteligencia artificial para el sector inmobiliario</p>
+                        <div class="course-price">$299</div>
+                    </div>
+                </div>
+                <div class="course-card" onclick="openCourseModal('leads-digitales')">
+                    <div class="course-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Generación de Leads">
+                    </div>
+                    <div class="course-content">
+                        <h3>Generación de Leads Digitales</h3>
+                        <p>Sistemas automatizados para captar clientes potenciales</p>
+                        <div class="course-price">$199</div>
+                    </div>
+                </div>
+                <div class="course-card" onclick="openCourseModal('redes-sociales')">
+                    <div class="course-image">
+                        <img src="/placeholder.svg?height=200&width=300" alt="Redes Sociales">
+                    </div>
+                    <div class="course-content">
+                        <h3>Redes Sociales para Inmobiliarias</h3>
+                        <p>Construye una marca personal sólida en plataformas digitales</p>
+                        <div class="course-price">$149</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <div class="gallery-header">
+                <span class="section-tag">PORTAFOLIO</span>
+                <h2>Galería de Proyectos</h2>
+                <p>Algunos de nuestros trabajos más destacados en marketing inmobiliario</p>
+            </div>
+            <div class="gallery-preview">
+                <div class="gallery-item" onclick="openGallery(0)">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 1">
+                    <div class="gallery-overlay">
+                        <h3>Campaña Digital Luxury Homes</h3>
+                        <p>+500% incremento en leads</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGallery(1)">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 2">
+                    <div class="gallery-overlay">
+                        <h3>Automatización IA Residencial</h3>
+                        <p>Reducción 80% tiempo respuesta</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGallery(2)">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 3">
+                    <div class="gallery-overlay">
+                        <h3>Redes Sociales Premium</h3>
+                        <p>2M+ impresiones mensuales</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGallery(3)">
+                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 4">
+                    <div class="gallery-overlay">
+                        <h3>Landing Page Conversión</h3>
+                        <p>45% tasa de conversión</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-cta">
+                <button class="btn-primary" onclick="openFullGallery()">
+                    Ver galería completa
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal gallery-modal">
+        <div class="gallery-modal-content">
+            <span class="close" onclick="closeGallery()">&times;</span>
+            <div class="gallery-navigation">
+                <button class="gallery-nav-btn prev" onclick="changeGalleryImage(-1)">‹</button>
+                <button class="gallery-nav-btn next" onclick="changeGalleryImage(1)">›</button>
+            </div>
+            <div class="gallery-slide-container">
+                <div id="gallerySlideContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>MARIANGEL</h3>
+                    <p>Marketing Inmobiliario con IA</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#sobre-mi">Sobre Mí</a></li>
+                            <li><a href="#agencia">Agencia</a></li>
+                            <li><a href="#cursos">Cursos</a></li>
+                            <li><a href="#galeria">Galería</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li>info@mariangelmarketing.com</li>
+                            <li>+1 (555) 123-4567</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mariangel Mujica. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Course Modal -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCourseModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="components/header/header.js"></script>
+    <script src="components/hero/hero.js"></script>
+    <script src="components/courses/courses.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="components/gallery/gallery.js"></script>
+</body>
+</html>
