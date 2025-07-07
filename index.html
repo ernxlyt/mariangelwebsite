@@ -175,66 +175,46 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="galeria" class="gallery">
-        <div class="container">
-            <div class="gallery-header">
-                <span class="section-tag">PORTAFOLIO</span>
-                <h2>Galería de Proyectos</h2>
-                <p>Algunos de nuestros trabajos más destacados en marketing inmobiliario</p>
+    <!-- Cards destacados con fotos -->
+    <section class="home-featured-cards" style="background:#181a1b;padding:60px 0;">
+      <div class="container">
+        <h2 style="color:#1cc34b;font-size:2.2rem;font-weight:700;letter-spacing:1px;margin-bottom:30px;">Galería</h2>
+        <div class="home-gallery-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;">
+          <div class="home-gallery-card" style="background:#232526;border-radius:18px;box-shadow:0 4px 24px rgba(28,195,75,0.10),0 1.5px 0 #1cc34b;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;border:1.5px solid #232526;">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Proyecto 1" style="width:100%;height:180px;object-fit:cover;background:#111;border-bottom:1px solid #222;">
+            <div style="padding:22px 22px 18px 22px;text-align:left;width:100%;">
+              <span style="display:inline-block;background:#1cc34b;color:#181a1b;font-size:0.85rem;font-weight:600;border-radius:8px;padding:3px 14px;margin-bottom:10px;margin-right:8px;letter-spacing:0.5px;">UX Design</span>
+              <span style="display:inline-block;background:#232526;color:#1cc34b;font-size:0.85rem;font-weight:500;border-radius:8px;padding:3px 12px;margin-bottom:10px;border:1px solid #1cc34b;">20 Noviembre 2024</span>
+              <h3 style="font-size:1.1rem;color:#f5f5f5;font-weight:600;margin-bottom:7px;margin-top:0;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Campaña Digital Luxury Homes</h3>
+              <p style="color:#bdbdbd;font-size:0.98rem;margin:0;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">+500% incremento en leads</p>
             </div>
-            <div class="gallery-preview">
-                <div class="gallery-item" onclick="openGallery(0)">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 1">
-                    <div class="gallery-overlay">
-                        <h3>Campaña Digital Luxury Homes</h3>
-                        <p>+500% incremento en leads</p>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openGallery(1)">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 2">
-                    <div class="gallery-overlay">
-                        <h3>Automatización IA Residencial</h3>
-                        <p>Reducción 80% tiempo respuesta</p>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openGallery(2)">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 3">
-                    <div class="gallery-overlay">
-                        <h3>Redes Sociales Premium</h3>
-                        <p>2M+ impresiones mensuales</p>
-                    </div>
-                </div>
-                <div class="gallery-item" onclick="openGallery(3)">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 4">
-                    <div class="gallery-overlay">
-                        <h3>Landing Page Conversión</h3>
-                        <p>45% tasa de conversión</p>
-                    </div>
-                </div>
+          </div>
+          <div class="home-gallery-card" style="background:#232526;border-radius:18px;box-shadow:0 4px 24px rgba(28,195,75,0.10),0 1.5px 0 #1cc34b;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;border:1.5px solid #232526;">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Proyecto 2" style="width:100%;height:180px;object-fit:cover;background:#111;border-bottom:1px solid #222;">
+            <div style="padding:22px 22px 18px 22px;text-align:left;width:100%;">
+              <span style="display:inline-block;background:#1cc34b;color:#181a1b;font-size:0.85rem;font-weight:600;border-radius:8px;padding:3px 14px;margin-bottom:10px;margin-right:8px;letter-spacing:0.5px;">IA Residencial</span>
+              <span style="display:inline-block;background:#232526;color:#1cc34b;font-size:0.85rem;font-weight:500;border-radius:8px;padding:3px 12px;margin-bottom:10px;border:1px solid #1cc34b;">19 Noviembre 2024</span>
+              <h3 style="font-size:1.1rem;color:#f5f5f5;font-weight:600;margin-bottom:7px;margin-top:0;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Automatización IA Residencial</h3>
+              <p style="color:#bdbdbd;font-size:0.98rem;margin:0;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Reducción 80% tiempo respuesta</p>
             </div>
-            <div class="gallery-cta">
-                <button class="btn-primary" onclick="openFullGallery()">
-                    Ver galería completa
-                    <span class="btn-arrow">→</span>
-                </button>
+          </div>
+          <div class="home-gallery-card" style="background:#232526;border-radius:18px;box-shadow:0 4px 24px rgba(28,195,75,0.10),0 1.5px 0 #1cc34b;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;border:1.5px solid #232526;">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Proyecto 3" style="width:100%;height:180px;object-fit:cover;background:#111;border-bottom:1px solid #222;">
+            <div style="padding:22px 22px 18px 22px;text-align:left;width:100%;">
+              <span style="display:inline-block;background:#1cc34b;color:#181a1b;font-size:0.85rem;font-weight:600;border-radius:8px;padding:3px 14px;margin-bottom:10px;margin-right:8px;letter-spacing:0.5px;">Redes Sociales</span>
+              <span style="display:inline-block;background:#232526;color:#1cc34b;font-size:0.85rem;font-weight:500;border-radius:8px;padding:3px 12px;margin-bottom:10px;border:1px solid #1cc34b;">18 Noviembre 2024</span>
+              <h3 style="font-size:1.1rem;color:#f5f5f5;font-weight:600;margin-bottom:7px;margin-top:0;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Redes Sociales Premium</h3>
+              <p style="color:#bdbdbd;font-size:0.98rem;margin:0;line-height:1.5;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">2M+ impresiones mensuales</p>
             </div>
+          </div>
         </div>
+        <div style="text-align:center;margin-top:40px;">
+          <a href="galeria.html" class="btn-gallery" style="display:inline-block;background:#1cc34b;color:#181a1b;font-weight:600;border-radius:30px;padding:12px 32px;font-size:1rem;text-align:center;text-decoration:none;transition:background 0.2s,color 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(28,195,75,0.10);border:none;">
+            Ver más &nbsp;→
+          </a>
+        </div>
+      </div>
     </section>
-
-    <!-- Gallery Modal -->
-    <div id="galleryModal" class="modal gallery-modal">
-        <div class="gallery-modal-content">
-            <span class="close" onclick="closeGallery()">&times;</span>
-            <div class="gallery-navigation">
-                <button class="gallery-nav-btn prev" onclick="changeGalleryImage(-1)">‹</button>
-                <button class="gallery-nav-btn next" onclick="changeGalleryImage(1)">›</button>
-            </div>
-            <div class="gallery-slide-container">
-                <div id="gallerySlideContent"></div>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">

@@ -126,6 +126,13 @@
   margin-right: auto;
 }
 
+.services-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
 @media (max-width: 768px) {
   .services-hero-content h1 {
     font-size: 2.5rem;
@@ -149,5 +156,12 @@
 
   .cta-content h2 {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-courses-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
