@@ -72,63 +72,71 @@ const courseData = {
       "Comunidad exclusiva",
     ],
   },
-}
+};
 
 function openCourseModal(courseId) {
-  const modal = document.getElementById("courseModal")
-  const modalContent = document.getElementById("modalContent")
-  const course = courseData[courseId]
-
-  if (course) {
-    modalContent.innerHTML = `
-            <div class="course-modal-content">
-                <div class="course-modal-header">
-                    <h2>${course.title}</h2>
-                    <div class="course-meta">
-                        <span class="course-price">${course.price}</span>
-                        <span class="course-duration">${course.duration}</span>
-                    </div>
-                    <p class="course-description">${course.description}</p>
-                </div>
-                
-                <div class="course-content-grid">
-                    <div class="course-modules">
-                        <h3>Módulos del curso</h3>
-                        <ul>
-                            ${course.modules.map((module) => `<li>${module}</li>`).join("")}
-                        </ul>
-                    </div>
-                    
-                    <div class="course-benefits">
-                        <h3>Beneficios incluidos</h3>
-                        <ul>
-                            ${course.benefits.map((benefit) => `<li>${benefit}</li>`).join("")}
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="course-cta">
-                    <button class="btn-primary">
-                        Inscribirse ahora
-                        <span class="btn-arrow">→</span>
-                    </button>
-                </div>
-            </div>
-        `
-
-    modal.style.display = "block"
-  }
+  const modal = document.getElementById('courseModal');
+  const modalContent = document.getElementById('modalContent');
+  const course = courseData[courseId];
+  
+  if (!course) return;
+  
+  const html = `
+    <button class="close" onclick="closeCourseModal()">&times;</button>
+    <div class="course-modal-title">${course.title}</div>
+    <div class="course-modal-price-row">
+      <span class="course-modal-price">${course.price}</span>
+      <span class="course-modal-duration">${course.duration}</span>
+    </div>
+    <div class="course-modal-desc">
+      ${course.description}
+    </div>
+    <div class="course-modal-cols">
+      <div class="course-modal-col">
+        <h4>📚 Módulos del curso</h4>
+        <ul>
+          ${course.modules.map(module => `
+            <li><span class="icon">▶</span>${module}</li>
+          `).join('')}
+        </ul>
+      </div>
+      <div class="course-modal-col">
+        <h4>✨ Beneficios incluidos</h4>
+        <ul>
+          ${course.benefits.map(benefit => `
+            <li><span class="icon">✔</span>${benefit}</li>
+          `).join('')}
+        </ul>
+      </div>
+    </div>
+  `;
+  
+  modalContent.innerHTML = html;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeCourseModal() {
-  const modal = document.getElementById("courseModal")
-  modal.style.display = "none"
+  const modal = document.getElementById('courseModal');
+  modal.classList.remove('open');
+  document.body.style.overflow = 'auto';
 }
 
 // Close modal when clicking outside
-window.onclick = (event) => {
-  const modal = document.getElementById("courseModal")
+window.addEventListener('click', (event) => {
+  const modal = document.getElementById("courseModal");
   if (event.target === modal) {
-    closeCourseModal()
+    closeCourseModal();
   }
-}
+});
+
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeCourseModal();
+  }
+});
+
+// Global functions
+window.openCourseModal = openCourseModal;
+window.closeCourseModal = closeCourseModal;

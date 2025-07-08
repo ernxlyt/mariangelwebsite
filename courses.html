@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - Mariangel Mujica</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/courses/courses.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+    <style>
+        .courses-list-section {
+            background: #181a1b;
+            padding: 60px 0 60px 0;
+        }
+        .courses-list-section .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .courses-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 40px;
+        }
+        .course-card-list {
+            background: #232526;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(28,195,75,0.10);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1.5px solid #232526;
+            display: flex;
+            flex-direction: column;
+        }
+        .course-card-list img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #111;
+            border-bottom: 1px solid #222;
+        }
+        .course-card-list-content {
+            padding: 28px 24px 22px 24px;
+        }
+        .course-card-list-content h3 {
+            color: #1cc34b;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        .course-card-list-content p {
+            color: #bdbdbd;
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+        }
+        .course-card-list-content .course-price {
+            color: #1cc34b;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .course-card-list-content .course-link {
+            display: inline-block;
+            background: #1cc34b;
+            color: #181a1b;
+            font-weight: 600;
+            border-radius: 30px;
+            padding: 10px 28px;
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(28,195,75,0.10);
+            border: none;
+        }
+        .course-card-list-content .course-link:hover {
+            background: #181a1b;
+            color: #1cc34b;
+            border: 1.5px solid #1cc34b;
+        }
+    </style>
+</head>
+<body style="background:#181a1b;">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h2>MARIANGEL</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="courses.html">Cursos</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="#contacto" class="btn-contact">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    <main class="courses-list-section">
+        <div class="container">
+            <h1 style="color:#1cc34b;font-size:2.3rem;font-weight:700;letter-spacing:1px;margin-bottom:30px;text-align:center;">Cursos Disponibles</h1>
+            <div class="courses-list-grid">
+                <div class="course-card-list">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Marketing Inmobiliario">
+                    <div class="course-card-list-content">
+                        <h3>Marketing Inmobiliario con IA</h3>
+                        <p>Domina las herramientas de inteligencia artificial para el sector inmobiliario.</p>
+                        <div class="course-price">$299</div>
+                        <a href="#" class="course-link" onclick="openCourseModal('marketing-inmobiliario');return false;">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="course-card-list">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Generación de Leads">
+                    <div class="course-card-list-content">
+                        <h3>Generación de Leads Digitales</h3>
+                        <p>Sistemas automatizados para captar clientes potenciales.</p>
+                        <div class="course-price">$199</div>
+                        <a href="#" class="course-link" onclick="openCourseModal('leads-digitales');return false;">Ver detalles</a>
+                    </div>
+                </div>
+                <div class="course-card-list">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Redes Sociales">
+                    <div class="course-card-list-content">
+                        <h3>Redes Sociales para Inmobiliarias</h3>
+                        <p>Construye una marca personal sólida en plataformas digitales.</p>
+                        <div class="course-price">$149</div>
+                        <a href="#" class="course-link" onclick="openCourseModal('redes-sociales');return false;">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>MARIANGEL</h3>
+                    <p>Marketing Inmobiliario con IA</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="courses.html">Cursos</a></li>
+                            <li><a href="galeria.html">Galería</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li>info@mariangelmarketing.com</li>
+                            <li>+1 (555) 123-4567</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mariangel Mujica. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="components/header/header.js"></script>
+    <script src="components/courses/courses.js"></script>
+</body>
+</html>

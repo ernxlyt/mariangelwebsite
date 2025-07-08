@@ -1,7 +1,7 @@
 .footer {
   background: var(--dark-bg);
   padding: 60px 0 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid rgba(28, 195, 75, 0.1);
 }
 
 .footer-content {
@@ -15,10 +15,13 @@
   color: var(--primary-green);
   font-size: 2rem;
   margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .footer-brand p {
   color: var(--text-gray);
+  font-size: 1rem;
 }
 
 .footer-links {
@@ -28,9 +31,10 @@
 }
 
 .footer-column h4 {
-  color: var(--primary-green);
+  color: var(--text-white);
   margin-bottom: 20px;
   font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .footer-column ul {
@@ -44,7 +48,23 @@
 .footer-column ul li a {
   color: var(--text-gray);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-column ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary-green);
+  transition: width 0.3s ease;
+}
+
+.footer-column ul li a:hover::after {
+  width: 100%;
 }
 
 .footer-column ul li a:hover {
@@ -54,8 +74,12 @@
 .footer-bottom {
   text-align: center;
   padding-top: 20px;
-  border-top: 1px solid #333;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-gray);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {

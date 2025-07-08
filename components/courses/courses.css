@@ -1,16 +1,31 @@
 .courses {
   padding: 100px 0;
   background: var(--dark-secondary);
+  position: relative;
+}
+
+.courses::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 80% 20%, rgba(28, 195, 75, 0.05) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .courses-header {
   text-align: center;
   margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .courses-header h2 {
   font-size: 3rem;
   margin: 20px 0;
+  color: var(--text-white);
 }
 
 .courses-header p {
@@ -24,6 +39,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
+  margin-bottom: 60px;
 }
 
 .course-card {
@@ -33,12 +49,30 @@
   transition: all 0.3s ease;
   cursor: pointer;
   border: 1px solid transparent;
+  position: relative;
+}
+
+.course-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(28, 195, 75, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.course-card:hover::before {
+  opacity: 1;
 }
 
 .course-card:hover {
   transform: translateY(-10px);
   border-color: var(--primary-green);
-  box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 20px 40px rgba(28, 195, 75, 0.1);
 }
 
 .course-image {
@@ -79,184 +113,153 @@
   color: var(--primary-green);
 }
 
-/* Modal Styles - Updated to match modern design */
+.courses-cta {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
-  z-index: 2000;
+  z-index: 10000;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background: rgba(24, 26, 27, 0.92);
+  backdrop-filter: blur(2px);
+}
+
+.modal.open {
+  display: block;
 }
 
 .modal-content {
-  background: linear-gradient(135deg, var(--dark-secondary) 0%, var(--dark-bg) 100%);
-  margin: 3% auto;
-  padding: 0;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 800px;
+  background: #232526;
+  margin: 40px auto;
+  padding: 40px 32px 32px 32px;
+  border-radius: 18px;
+  max-width: 700px;
+  color: #f5f5f5;
+  box-shadow: 0 8px 40px rgba(28, 195, 75, 0.15);
   position: relative;
-  box-shadow: 0 25px 50px rgba(28, 195, 75, 0.1);
-  border: 1px solid rgba(28, 195, 75, 0.2);
-  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
 }
 
-.close {
+.modal-content .close {
   position: absolute;
-  right: 20px;
-  top: 20px;
-  color: var(--text-gray);
-  font-size: 28px;
-  font-weight: bold;
+  top: 18px;
+  right: 24px;
+  color: #f5f5f5;
+  font-size: 2rem;
+  background: none;
+  border: none;
   cursor: pointer;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.5);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+  transition: color 0.2s;
 }
 
-.close:hover {
-  color: var(--primary-green);
-  background: rgba(28, 195, 75, 0.2);
+.modal-content .close:hover {
+  color: #1cc34b;
 }
 
-.course-modal-content {
-  padding: 40px;
-}
-
-.course-modal-header {
+.course-modal-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
   text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(28, 195, 75, 0.2);
 }
 
-.course-modal-header h2 {
-  font-size: 2.5rem;
-  color: var(--text-white);
-  margin-bottom: 15px;
-}
-
-.course-meta {
+.course-modal-price-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  margin-bottom: 20px;
+  gap: 18px;
+  margin-bottom: 18px;
 }
 
-.course-price {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--primary-green);
-}
-
-.course-duration {
-  background: var(--primary-green);
-  color: var(--dark-bg);
-  padding: 8px 20px;
-  border-radius: 25px;
+.course-modal-price {
+  color: #1cc34b;
+  font-size: 2rem;
   font-weight: bold;
 }
 
-.course-description {
+.course-modal-duration {
+  background: #1cc34b;
+  color: #181a1b;
+  font-weight: 600;
+  border-radius: 18px;
+  padding: 6px 22px;
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
+.course-modal-desc {
+  color: #bdbdbd;
+  text-align: center;
+  margin-bottom: 28px;
   font-size: 1.1rem;
-  color: var(--text-gray);
-  line-height: 1.6;
-  text-align: center;
 }
 
-.course-content-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin: 40px 0;
+.course-modal-cols {
+  display: flex;
+  gap: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
 }
 
-.course-modules,
-.course-benefits {
-  background: var(--dark-bg);
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid rgba(28, 195, 75, 0.1);
+.course-modal-col {
+  flex: 1 1 260px;
+  background: #181a1b;
+  border-radius: 14px;
+  padding: 28px 20px 20px 20px;
+  min-width: 240px;
+  box-shadow: 0 2px 12px rgba(28, 195, 75, 0.08);
 }
 
-.course-modules h3,
-.course-benefits h3 {
-  color: var(--primary-green);
-  font-size: 1.3rem;
-  margin-bottom: 20px;
+.course-modal-col h4 {
+  color: #1cc34b;
+  font-size: 1.1rem;
+  margin-bottom: 18px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-.course-modules h3::before {
-  content: "📚";
-  font-size: 1.2rem;
-}
-
-.course-benefits h3::before {
-  content: "✨";
-  font-size: 1.2rem;
-}
-
-.course-modules ul,
-.course-benefits ul {
+.course-modal-col ul {
   list-style: none;
-  space-y: 12px;
+  padding: 0;
+  margin: 0;
 }
 
-.course-modules li,
-.course-benefits li {
-  color: var(--text-gray);
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  padding-left: 25px;
+.course-modal-col ul li {
+  color: #f5f5f5;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 
-.course-modules li::before {
-  content: "▶";
-  color: var(--primary-green);
-  position: absolute;
-  left: 0;
-  font-size: 0.8rem;
+.course-modal-col ul li .icon {
+  color: #1cc34b;
+  font-size: 1.1rem;
+  margin-right: 6px;
 }
 
-.course-benefits li::before {
-  content: "✓";
-  color: var(--primary-green);
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-
-.course-cta {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid rgba(28, 195, 75, 0.2);
-}
-
-.course-cta .btn-primary {
-  font-size: 1.2rem;
-  padding: 18px 40px;
-  background: linear-gradient(45deg, var(--primary-green), #22d65f);
-  box-shadow: 0 10px 30px rgba(28, 195, 75, 0.3);
-}
-
-.course-cta .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 40px rgba(28, 195, 75, 0.4);
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 768px) {
@@ -271,23 +274,11 @@
   .modal-content {
     margin: 5% auto;
     width: 95%;
+    padding: 18px 4vw 18px 4vw;
   }
 
-  .course-modal-content {
-    padding: 30px 20px;
-  }
-
-  .course-modal-header h2 {
-    font-size: 2rem;
-  }
-
-  .course-meta {
+  .course-modal-cols {
     flex-direction: column;
-    gap: 15px;
-  }
-
-  .course-content-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 18px;
   }
 }

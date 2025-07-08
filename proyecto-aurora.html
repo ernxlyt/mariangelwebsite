@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residencial Aurora - Mariangel Mujica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/project/project.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h2>MARIANGEL</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="index.html#agencia">Agencia</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="hero-background">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Residencial Aurora">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="breadcrumb">
+                    <a href="galeria.html">Galería</a>
+                    <span>/</span>
+                    <span>Residencial Aurora</span>
+                </div>
+                <span class="project-category">Luxury Homes</span>
+                <h1>Residencial Aurora</h1>
+                <p>Campaña integral de marketing digital que revolucionó la venta de propiedades de lujo</p>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Cliente:</span>
+                        <span class="meta-value">Aurora Developments</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duración:</span>
+                        <span class="meta-value">6 meses</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Año:</span>
+                        <span class="meta-value">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Project Gallery -->
+    <section class="project-gallery">
+        <div class="container">
+            <h2>Galería del Proyecto</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item main-image" onclick="openLightbox(0)">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Vista principal">
+                    <div class="gallery-overlay">
+                        <div class="overlay-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=400&q=80" alt="Interior">
+                    <div class="gallery-overlay">
+                        <div class="overlay-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=400&q=80" alt="Amenidades">
+                    <div class="gallery-overlay">
+                        <div class="overlay-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" alt="Vista aérea">
+                    <div class="gallery-overlay">
+                        <div class="overlay-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Lobby">
+                    <div class="gallery-overlay">
+                        <div class="overlay-icon">🔍</div>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Terraza">
+                    <div class="gallery-overlay">
+                        <div class="overlay-icon">🔍</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="details-content">
+                    <h2>El Desafío</h2>
+                    <p>Aurora Developments necesitaba posicionar su nuevo desarrollo residencial de lujo en un mercado altamente competitivo. El desafío principal era generar leads cualificados y crear una marca premium que resonara con su público objetivo de alto poder adquisitivo.</p>
+                    
+                    <h3>Estrategia Implementada</h3>
+                    <ul>
+                        <li><strong>Branding Premium:</strong> Desarrollo de identidad visual sofisticada</li>
+                        <li><strong>Marketing Digital 360°:</strong> Campañas integradas en múltiples canales</li>
+                        <li><strong>Automatización con IA:</strong> Chatbots inteligentes para calificación de leads</li>
+                        <li><strong>Content Marketing:</strong> Contenido exclusivo y experiencias virtuales</li>
+                        <li><strong>Influencer Marketing:</strong> Colaboraciones estratégicas con lifestyle influencers</li>
+                    </ul>
+
+                    <h3>Resultados Obtenidos</h3>
+                    <p>La campaña superó todas las expectativas, generando un incremento del 500% en leads cualificados y logrando vender el 85% de las unidades en los primeros 4 meses. El ROI de la inversión en marketing fue de 300%, estableciendo un nuevo estándar para futuros proyectos.</p>
+                </div>
+
+                <div class="details-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Servicios Utilizados</h4>
+                        <div class="service-tags">
+                            <span class="service-tag">Marketing Digital</span>
+                            <span class="service-tag">Branding</span>
+                            <span class="service-tag">IA & Automatización</span>
+                            <span class="service-tag">Content Marketing</span>
+                            <span class="service-tag">Social Media</span>
+                            <span class="service-tag">SEO/SEM</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>Tecnologías</h4>
+                        <ul class="tech-list">
+                            <li>Google Ads & Analytics</li>
+                            <li>Facebook Business Suite</li>
+                            <li>HubSpot CRM</li>
+                            <li>Chatbot con IA</li>
+                            <li>Matterport 3D Tours</li>
+                            <li>Adobe Creative Suite</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h4>Timeline</h4>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">Mes 1</div>
+                                <div class="timeline-content">Investigación y estrategia</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Mes 2</div>
+                                <div class="timeline-content">Desarrollo de branding</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Mes 3-4</div>
+                                <div class="timeline-content">Lanzamiento de campañas</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Mes 5-6</div>
+                                <div class="timeline-content">Optimización y escalado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-navigation">
+                <button class="lightbox-nav prev" onclick="changeLightboxImage(-1)">‹</button>
+                <button class="lightbox-nav next" onclick="changeLightboxImage(1)">›</button>
+            </div>
+            <img id="lightboxImage" src="/placeholder.svg" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+        </div>
+    </div>
+
+    <!-- Related Projects -->
+    <section class="related-projects">
+        <div class="container">
+            <h2>Proyectos Relacionados</h2>
+            <div class="projects-grid">
+                <div class="project-card" onclick="window.location.href='proyecto-horizonte.html'">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Edificio Horizonte">
+                    <div class="card-content">
+                        <span class="card-category">Residencial</span>
+                        <h3>Edificio Horizonte</h3>
+                        <p>Automatización con IA</p>
+                    </div>
+                </div>
+                <div class="project-card" onclick="window.location.href='proyecto-verde.html'">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Condominio Verde">
+                    <div class="card-content">
+                        <span class="card-category">Redes Sociales</span>
+                        <h3>Condominio Verde</h3>
+                        <p>Estrategia viral</p>
+                    </div>
+                </div>
+                <div class="project-card" onclick="window.location.href='proyecto-villa-mar.html'">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80" alt="Villa Mar">
+                    <div class="card-content">
+                        <span class="card-category">Comercial</span>
+                        <h3>Villa Mar</h3>
+                        <p>Landing pages</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>MARIANGEL</h3>
+                    <p>Marketing Inmobiliario con IA</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navegación</h4>
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                            <li><a href="servicios.html">Servicios</a></li>
+                            <li><a href="cursos.html">Cursos</a></li>
+                            <li><a href="galeria.html">Galería</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contacto</h4>
+                        <ul>
+                            <li>info@mariangelmarketing.com</li>
+                            <li>+1 (555) 123-4567</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mariangel Mujica. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="components/header/header.js"></script>
+    <script src="components/project/project.js"></script>
+</body>
+</html>

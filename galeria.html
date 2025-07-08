@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - Big Leap Marketing</title>
+    <title>Galería - Mariangel Mujica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="components/header/header.css">
-    <link rel="stylesheet" href="components/gallery/gallery.css">
+    <link rel="stylesheet" href="components/gallery/gallery-page.css">
     <link rel="stylesheet" href="components/footer/footer.css">
 </head>
 <body>
@@ -18,10 +21,12 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+                <li><a href="sobre-mi.html">Sobre Mí</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="index.html#cursos">Cursos</a></li>
-                <li><a href="#contacto" class="btn-contact">Contacto</a></li>
+                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="index.html#agencia">Agencia</a></li>
+                <li><a href="galeria.html" class="active">Galería</a></li>
+                <li><a href="contacto.html" class="btn-contact">Contacto</a></li>
             </ul>
             <div class="nav-toggle">
                 <span></span>
@@ -31,49 +36,182 @@
         </nav>
     </header>
 
-    <!-- Gallery Hero -->
+    <!-- Hero Section -->
     <section class="gallery-hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
         <div class="container">
-            <div class="gallery-hero-content">
-                <span class="section-tag">GALERÍA</span>
-                <h1>Proyectos Destacados</h1>
-                <p>Descubre algunos de los proyectos inmobiliarios que hemos impulsado con estrategias digitales innovadoras.</p>
+            <div class="hero-content">
+    <span class="hero-tag">NUESTRO PORTAFOLIO</span>
+    <h1>Galería Creativa</h1>
+    <p>Explora nuestra colección de proyectos inmobiliarios donde la creatividad y la innovación se encuentran para crear experiencias visuales extraordinarias.</p>
+</div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="luxury">Luxury Homes</button>
+                <button class="filter-btn" data-filter="residential">Residencial</button>
+                <button class="filter-btn" data-filter="commercial">Comercial</button>
+                <button class="filter-btn" data-filter="social">Redes Sociales</button>
             </div>
         </div>
     </section>
 
     <!-- Gallery Grid -->
-    <section class="gallery-grid">
+    <section class="gallery-main">
         <div class="container">
-            <div class="grid">
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 1">
-                    <div class="gallery-caption">
-                        <h3>Residencial Aurora</h3>
-                        <p>Campaña de generación de leads y branding digital.</p>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Luxury Projects -->
+
+                <div class="gallery-item residential" data-project="edificio-horizonte">
+                    <div class="gallery-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Edificio Horizonte">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-category">Residencial</span>
+                                    <h3>Edificio Horizonte</h3>
+                                    <p>Automatización con IA y chatbots</p>
+                                    <button class="view-project-btn" onclick="window.location.href='proyecto-aurora.html'">
+                                        Ver Proyecto
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+    <h3 class="project-title">Edificio Horizonte</h3>
+</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 2">
-                    <div class="gallery-caption">
-                        <h3>Edificio Horizonte</h3>
-                        <p>Automatización de atención al cliente con IA.</p>
+
+                <div class="gallery-item social" data-project="condominio-verde">
+                    <div class="gallery-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Condominio Verde">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-category">Redes Sociales</span>
+                                    <h3>Condominio Verde</h3>
+                                    <p>Estrategia viral en redes sociales</p>
+                                    <button class="view-project-btn" onclick="window.location.href='proyecto-verde.html'">
+                                        Ver Proyecto
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7H7M17 7V17"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+    <h3 class="project-title">Condominio Verde</h3>
+</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 3">
-                    <div class="gallery-caption">
-                        <h3>Condominio Verde</h3>
-                        <p>Gestión de redes sociales y contenido visual.</p>
+
+                <div class="gallery-item commercial" data-project="villa-mar">
+                    <div class="gallery-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Villa Mar">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-category">Comercial</span>
+                                    <h3>Villa Mar</h3>
+                                    <p>Landing pages de alta conversión</p>
+                                    <button class="view-project-btn" onclick="window.location.href='proyecto-villa-mar.html'">
+                                        Ver Proyecto
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7H7M17 7V17"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+    <h3 class="project-title">Villa Mar</h3>
+</div>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="/placeholder.svg?height=300&width=400" alt="Proyecto 4">
-                    <div class="gallery-caption">
-                        <h3>Villa Mar</h3>
-                        <p>Publicidad digital y posicionamiento SEO.</p>
+
+                <div class="gallery-item luxury" data-project="torres-platinum">
+                    <div class="gallery-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" alt="Torres Platinum">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-category">Luxury Homes</span>
+                                    <h3>Torres Platinum</h3>
+                                    <p>Branding premium y posicionamiento</p>
+                                    <button class="view-project-btn" onclick="window.location.href='proyecto-platinum.html'">
+                                        Ver Proyecto
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7H7M17 7V17"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+    <h3 class="project-title">Torres Platinum</h3>
+</div>
                     </div>
                 </div>
+
+                <div class="gallery-item residential" data-project="urban-living">
+                    <div class="gallery-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80" alt="Urban Living">
+                            <div class="card-overlay">
+                                <div class="overlay-content">
+                                    <span class="project-category">Residencial</span>
+                                    <h3>Urban Living</h3>
+                                    <p>Email marketing automatizado</p>
+                                    <button class="view-project-btn" onclick="window.location.href='proyecto-urban.html'">
+                                        Ver Proyecto
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M7 17L17 7H7M17 7V17"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+    <h3 class="project-title">Urban Living</h3>
+</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section">
+                <button class="btn-primary load-more-btn" id="loadMoreBtn">
+                    Cargar Más Proyectos
+                    <div class="loading-spinner"></div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gallery-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Listo para tu próximo proyecto?</h2>
+                <p>Trabajemos juntos para crear algo extraordinario</p>
+                <a href="contacto.html" class="btn-primary">Iniciar Proyecto</a>
             </div>
         </div>
     </section>
@@ -91,9 +229,10 @@
                         <h4>Navegación</h4>
                         <ul>
                             <li><a href="index.html">Inicio</a></li>
-                            <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+                            <li><a href="sobre-mi.html">Sobre Mí</a></li>
                             <li><a href="servicios.html">Servicios</a></li>
-                            <li><a href="index.html#cursos">Cursos</a></li>
+                            <li><a href="cursos.html">Cursos</a></li>
+                            <li><a href="galeria.html">Galería</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -112,6 +251,6 @@
     </footer>
 
     <script src="components/header/header.js"></script>
-    <script src="components/gallery/gallery.js"></script>
+    <script src="components/gallery/gallery-page.js"></script>
 </body>
 </html>

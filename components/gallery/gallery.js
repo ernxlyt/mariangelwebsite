@@ -2,7 +2,7 @@
 const galleryData = [
   {
     title: "Campaña Digital Luxury Homes",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
     description:
       "Desarrollamos una estrategia integral de marketing digital para un desarrollo de lujo, implementando automatización con IA y campañas segmentadas que resultaron en un incremento del 500% en leads cualificados.",
     stats: [
@@ -13,7 +13,7 @@ const galleryData = [
   },
   {
     title: "Automatización IA Residencial",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
     description:
       "Implementación de chatbots inteligentes y sistemas de automatización que redujeron el tiempo de respuesta en un 80% y mejoraron la experiencia del cliente significativamente.",
     stats: [
@@ -24,7 +24,7 @@ const galleryData = [
   },
   {
     title: "Redes Sociales Premium",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
     description:
       "Estrategia completa de redes sociales que generó más de 2 millones de impresiones mensuales y posicionó la marca como líder en el sector inmobiliario premium.",
     stats: [
@@ -35,7 +35,7 @@ const galleryData = [
   },
   {
     title: "Landing Page Conversión",
-    image: "/placeholder.svg?height=600&width=800",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
     description:
       "Diseño y optimización de landing pages con técnicas de psicología del consumidor que lograron una tasa de conversión del 45%, superando los estándares de la industria.",
     stats: [
@@ -44,39 +44,39 @@ const galleryData = [
     ],
     tags: ["Landing Pages", "UX/UI", "Conversion Rate", "A/B Testing"],
   },
-]
+];
 
-let currentGalleryIndex = 0
+let currentGalleryIndex = 0;
 
 function openGallery(index) {
-  currentGalleryIndex = index
-  showGallerySlide(index)
-  document.getElementById("galleryModal").style.display = "block"
-}
-
-function openFullGallery() {
-  openGallery(0)
+  currentGalleryIndex = index;
+  showGallerySlide(index);
+  const modal = document.getElementById("galleryModal");
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
 }
 
 function closeGallery() {
-  document.getElementById("galleryModal").style.display = "none"
+  const modal = document.getElementById("galleryModal");
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 function changeGalleryImage(direction) {
-  currentGalleryIndex += direction
+  currentGalleryIndex += direction;
 
   if (currentGalleryIndex >= galleryData.length) {
-    currentGalleryIndex = 0
+    currentGalleryIndex = 0;
   } else if (currentGalleryIndex < 0) {
-    currentGalleryIndex = galleryData.length - 1
+    currentGalleryIndex = galleryData.length - 1;
   }
 
-  showGallerySlide(currentGalleryIndex)
+  showGallerySlide(currentGalleryIndex);
 }
 
 function showGallerySlide(index) {
-  const slideContent = document.getElementById("gallerySlideContent")
-  const project = galleryData[index]
+  const slideContent = document.getElementById("gallerySlideContent");
+  const project = galleryData[index];
 
   slideContent.innerHTML = `
     <div class="gallery-slide">
@@ -105,27 +105,32 @@ function showGallerySlide(index) {
         </div>
       </div>
     </div>
-  `
+  `;
 }
 
 // Close gallery when clicking outside
 window.addEventListener("click", (event) => {
-  const galleryModal = document.getElementById("galleryModal")
+  const galleryModal = document.getElementById("galleryModal");
   if (event.target === galleryModal) {
-    closeGallery()
+    closeGallery();
   }
-})
+});
 
 // Keyboard navigation
 document.addEventListener("keydown", (event) => {
-  const galleryModal = document.getElementById("galleryModal")
-  if (galleryModal.style.display === "block") {
+  const galleryModal = document.getElementById("galleryModal");
+  if (galleryModal && galleryModal.style.display === "block") {
     if (event.key === "ArrowLeft") {
-      changeGalleryImage(-1)
+      changeGalleryImage(-1);
     } else if (event.key === "ArrowRight") {
-      changeGalleryImage(1)
+      changeGalleryImage(1);
     } else if (event.key === "Escape") {
-      closeGallery()
+      closeGallery();
     }
   }
-})
+});
+
+// Global functions
+window.openGallery = openGallery;
+window.closeGallery = closeGallery;
+window.changeGalleryImage = changeGalleryImage;
